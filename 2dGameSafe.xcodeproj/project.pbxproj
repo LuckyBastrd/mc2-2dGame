@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A1E9C8E2C287C4A0079ED3A /* AddCollisionExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C852C287C4A0079ED3A /* AddCollisionExtension.swift */; };
+		9A1E9C912C287C4A0079ED3A /* RainfallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C7F2C287C4A0079ED3A /* RainfallView.swift */; };
+		9A1E9C922C287C4A0079ED3A /* TilePhysicsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C862C287C4A0079ED3A /* TilePhysicsExtension.swift */; };
+		9A1E9C932C287C4A0079ED3A /* AddHeroExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C842C287C4A0079ED3A /* AddHeroExtension.swift */; };
+		9A1E9C942C287C4A0079ED3A /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C812C287C4A0079ED3A /* MainGameView.swift */; };
+		9A1E9C952C287C4A0079ED3A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C832C287C4A0079ED3A /* GameScene.swift */; };
+		9A1E9C962C287C4A0079ED3A /* HoldableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C7D2C287C4A0079ED3A /* HoldableButton.swift */; };
+		9A1E9C972C287C4A0079ED3A /* MainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9C892C287C4A0079ED3A /* MainScene.sks */; };
+		9A1E9C992C287C4A0079ED3A /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9C882C287C4A0079ED3A /* MyTileSet.sks */; };
 		A7C9A43C2C1B382D00F98BB9 /* _dGameSafeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A43B2C1B382D00F98BB9 /* _dGameSafeApp.swift */; };
 		A7C9A43E2C1B382D00F98BB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A43D2C1B382D00F98BB9 /* ContentView.swift */; };
 		A7C9A4402C1B382E00F98BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C9A43F2C1B382E00F98BB9 /* Assets.xcassets */; };
@@ -24,6 +33,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A1E9C7D2C287C4A0079ED3A /* HoldableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldableButton.swift; sourceTree = "<group>"; };
+		9A1E9C7F2C287C4A0079ED3A /* RainfallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainfallView.swift; sourceTree = "<group>"; };
+		9A1E9C812C287C4A0079ED3A /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
+		9A1E9C832C287C4A0079ED3A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		9A1E9C842C287C4A0079ED3A /* AddHeroExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHeroExtension.swift; sourceTree = "<group>"; };
+		9A1E9C852C287C4A0079ED3A /* AddCollisionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollisionExtension.swift; sourceTree = "<group>"; };
+		9A1E9C862C287C4A0079ED3A /* TilePhysicsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePhysicsExtension.swift; sourceTree = "<group>"; };
+		9A1E9C882C287C4A0079ED3A /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
+		9A1E9C892C287C4A0079ED3A /* MainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScene.sks; sourceTree = "<group>"; };
 		A7C9A4382C1B382D00F98BB9 /* 2dGameSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2dGameSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C9A43B2C1B382D00F98BB9 /* _dGameSafeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _dGameSafeApp.swift; sourceTree = "<group>"; };
 		A7C9A43D2C1B382D00F98BB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -52,6 +70,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A1E9C7E2C287C4A0079ED3A /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				9A1E9C7D2C287C4A0079ED3A /* HoldableButton.swift */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		9A1E9C802C287C4A0079ED3A /* OtherViews */ = {
+			isa = PBXGroup;
+			children = (
+				9A1E9C7F2C287C4A0079ED3A /* RainfallView.swift */,
+			);
+			path = OtherViews;
+			sourceTree = "<group>";
+		};
+		9A1E9C822C287C4A0079ED3A /* GameViews */ = {
+			isa = PBXGroup;
+			children = (
+				9A1E9C812C287C4A0079ED3A /* MainGameView.swift */,
+			);
+			path = GameViews;
+			sourceTree = "<group>";
+		};
+		9A1E9C872C287C4A0079ED3A /* GameSceneHandlers */ = {
+			isa = PBXGroup;
+			children = (
+				9A1E9C832C287C4A0079ED3A /* GameScene.swift */,
+				9A1E9C842C287C4A0079ED3A /* AddHeroExtension.swift */,
+				9A1E9C852C287C4A0079ED3A /* AddCollisionExtension.swift */,
+				9A1E9C862C287C4A0079ED3A /* TilePhysicsExtension.swift */,
+			);
+			path = GameSceneHandlers;
+			sourceTree = "<group>";
+		};
+		9A1E9C8A2C287C4A0079ED3A /* SpriteKit */ = {
+			isa = PBXGroup;
+			children = (
+				9A1E9C882C287C4A0079ED3A /* MyTileSet.sks */,
+				9A1E9C892C287C4A0079ED3A /* MainScene.sks */,
+			);
+			path = SpriteKit;
+			sourceTree = "<group>";
+		};
 		A7C9A42F2C1B382C00F98BB9 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +133,11 @@
 		A7C9A43A2C1B382D00F98BB9 /* 2dGameSafe */ = {
 			isa = PBXGroup;
 			children = (
+				9A1E9C7E2C287C4A0079ED3A /* Tool */,
+				9A1E9C802C287C4A0079ED3A /* OtherViews */,
+				9A1E9C822C287C4A0079ED3A /* GameViews */,
+				9A1E9C872C287C4A0079ED3A /* GameSceneHandlers */,
+				9A1E9C8A2C287C4A0079ED3A /* SpriteKit */,
 				A7C9A4682C23C12500F98BB9 /* PuzzleController */,
 				A7C9A45F2C2183FB00F98BB9 /* SceneFile */,
 				A7C9A43B2C1B382D00F98BB9 /* _dGameSafeApp.swift */,
@@ -174,6 +241,8 @@
 				A7C9A4622C2183FB00F98BB9 /* PolyPlane.scn in Resources */,
 				A7C9A4432C1B382E00F98BB9 /* Preview Assets.xcassets in Resources */,
 				A7C9A4612C2183FB00F98BB9 /* Box.scn in Resources */,
+				9A1E9C972C287C4A0079ED3A /* MainScene.sks in Resources */,
+				9A1E9C992C287C4A0079ED3A /* MyTileSet.sks in Resources */,
 				A7C9A4402C1B382E00F98BB9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +262,13 @@
 				A7C9A4562C1C256B00F98BB9 /* VentViewController.swift in Sources */,
 				A7C9A43C2C1B382D00F98BB9 /* _dGameSafeApp.swift in Sources */,
 				A7C9A44E2C1B3D5500F98BB9 /* bitMasks.swift in Sources */,
+				9A1E9C8E2C287C4A0079ED3A /* AddCollisionExtension.swift in Sources */,
+				9A1E9C912C287C4A0079ED3A /* RainfallView.swift in Sources */,
+				9A1E9C922C287C4A0079ED3A /* TilePhysicsExtension.swift in Sources */,
+				9A1E9C932C287C4A0079ED3A /* AddHeroExtension.swift in Sources */,
+				9A1E9C942C287C4A0079ED3A /* MainGameView.swift in Sources */,
+				9A1E9C952C287C4A0079ED3A /* GameScene.swift in Sources */,
+				9A1E9C962C287C4A0079ED3A /* HoldableButton.swift in Sources */,
 				A7C9A4502C1C0DA100F98BB9 /* GameViewControllerRepresentable.swift in Sources */,
 				A7C9A4652C227F2A00F98BB9 /* DrawerViewController.swift in Sources */,
 			);

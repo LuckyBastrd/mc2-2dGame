@@ -8,9 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    
     var body: some View {
-        VStack {
-            GameViewControllerRepresentable()
+        ZStack{
+//            RainfallView()
+            MainGameView()
         }
+        .ignoresSafeArea()
     }
+}
+
+
+
+#Preview {
+    ContentView()
 }
