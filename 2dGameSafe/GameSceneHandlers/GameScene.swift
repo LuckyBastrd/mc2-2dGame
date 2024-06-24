@@ -32,6 +32,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
+        self.backgroundColor = .black
         
         setupCamera()
         
@@ -42,6 +43,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         contactManager = ContactManager(scene: self)
         
         viewControllerPresenter = ViewControllerPresenter(presentingViewController: viewController()!)
+        
+        addRainEffect()
         
         for node in self.children {
             if(node.name == "wallPhysics") {
@@ -54,6 +57,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func addRainEffect() {
+        if let rainParticle = SKEmitterNode(fileNamed: "Rain") {
+            rainParticle.position = CGPoint(x: -300, y: 0)
+            rainParticle.zPosition = -10
+            rainParticle.targetNode = self
+            rainParticle.particlePositionRange = CGVector(dx: self.size.width, dy: 0)
+            self.addChild(rainParticle)
+        } else {
+            print("Rain particle not found")
+        }
+    }
     
     func setupCamera() {
         cameraNode = SKCameraNode()
@@ -141,27 +155,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
         cameraNode.position = hero.position
-//        
-//        guard let heroNode = heroNode else { return }
-//        let warningDistanceThreshold: CGFloat = 10.0
-//        
-//        var closestFurnitureNode: SKNode?
-//        var minDistance: CGFloat = .greatestFiniteMagnitude
-//        
-//        self.enumerateChildNodes(withName: "furniture") { node, _ in
-//            let distance = hypot(heroNode.position.x - node.position.x, heroNode.position.y - node.position.y)
-//            if distance < minDistance {
-//                minDistance = distance
-//                closestFurnitureNode = node
-//            }
-//        }
-//        
-//        if let closestFurnitureNode = closestFurnitureNode, minDistance < warningDistanceThreshold {
-//            warningSign.position = CGPoint(x: closestFurnitureNode.position.x, y: closestFurnitureNode.position.y + 50) // Adjust position as needed
-//            warningSign.isHidden = false
-//        } else {
-//            warningSign.isHidden = true
-//        }
     }
     
     public func didBegin(_ contact: SKPhysicsContact) {
