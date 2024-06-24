@@ -26,6 +26,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var heroNode: SKSpriteNode!
 
     var contactManager: ContactManager!
+    var viewControllerPresenter: ViewControllerPresenter!
     
     let collisionNames = ["bed", "drawer", "tv", "chest"]
     
@@ -39,6 +40,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addCollisions(names: collisionNames)
         
         contactManager = ContactManager(scene: self)
+        
+        viewControllerPresenter = ViewControllerPresenter(presentingViewController: viewController()!)
         
         for node in self.children {
             if(node.name == "wallPhysics") {
@@ -125,16 +128,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             hero.position.y -= 2
         }
         if actionButton && contactManager.bedTapable {
-            presentShadowViewController()
+            viewControllerPresenter.presentShadowViewController()
         }
         if actionButton && contactManager.drawerTapable {
-            presentDrawerViewController()
+            viewControllerPresenter.presentDrawerViewController()
         }
         if actionButton && contactManager.chestTapable {
-            presentSafeViewController()
+            viewControllerPresenter.presentSafeViewController()
         }
         if actionButton && contactManager.tvTapable {
-            presentVentViewController()
+            viewControllerPresenter.presentVentViewController()
         }
         
         cameraNode.position = hero.position
@@ -196,17 +199,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ventViewController.modalPresentationStyle = .fullScreen
         viewController()?.present(ventViewController, animated: true, completion: nil)
     }
-}
-
-extension SKScene {
-    func viewController() -> UIViewController? {
-        var responder: UIResponder? = self.view
-        while responder != nil {
-            responder = responder!.next
-            if let viewController = responder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
+    
+    func savePuzzleState(puzzleID: String, isSolved: Bool) {
+        UserDefaults.standard.set(isSolved, forKey: puzzleID)
+    }
+    
+    func loadPuzzleState(puzzleID: String) -> Bool {
+        return UserDefaults.standard.bool(forKey: puzzleID)
     }
 }

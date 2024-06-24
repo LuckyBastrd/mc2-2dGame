@@ -30,6 +30,7 @@
 		A7C9A4622C2183FB00F98BB9 /* PolyPlane.scn in Resources */ = {isa = PBXBuildFile; fileRef = A7C9A45D2C2183FB00F98BB9 /* PolyPlane.scn */; };
 		A7C9A4652C227F2A00F98BB9 /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4642C227F2A00F98BB9 /* DrawerViewController.swift */; };
 		A7C9A47C2C291FD900F98BB9 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A47B2C291FD900F98BB9 /* ContactManager.swift */; };
+		A7C9A47E2C29301F00F98BB9 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A47D2C29301F00F98BB9 /* ViewControllerPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		A7C9A45D2C2183FB00F98BB9 /* PolyPlane.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = PolyPlane.scn; sourceTree = "<group>"; };
 		A7C9A4642C227F2A00F98BB9 /* DrawerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		A7C9A47B2C291FD900F98BB9 /* ContactManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
+		A7C9A47D2C29301F00F98BB9 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				9A1E9C832C287C4A0079ED3A /* GameScene.swift */,
 				A7C9A47B2C291FD900F98BB9 /* ContactManager.swift */,
+				A7C9A47D2C29301F00F98BB9 /* ViewControllerPresenter.swift */,
 				9A1E9C842C287C4A0079ED3A /* AddHeroExtension.swift */,
 				9A1E9C852C287C4A0079ED3A /* AddCollisionExtension.swift */,
 				9A1E9C862C287C4A0079ED3A /* TilePhysicsExtension.swift */,
@@ -263,6 +266,7 @@
 				A7C9A44E2C1B3D5500F98BB9 /* bitMasks.swift in Sources */,
 				9A1E9C8E2C287C4A0079ED3A /* AddCollisionExtension.swift in Sources */,
 				9A1E9C912C287C4A0079ED3A /* RainfallView.swift in Sources */,
+				A7C9A47E2C29301F00F98BB9 /* ViewControllerPresenter.swift in Sources */,
 				9A1E9C922C287C4A0079ED3A /* TilePhysicsExtension.swift in Sources */,
 				9A1E9C932C287C4A0079ED3A /* AddHeroExtension.swift in Sources */,
 				9A1E9C942C287C4A0079ED3A /* MainGameView.swift in Sources */,

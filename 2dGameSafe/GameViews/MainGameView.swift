@@ -16,7 +16,6 @@ struct MainGameView: View {
         return scene
     }()
     
-    
     @State private var moveToLeft = false
     @State private var moveToRight = false
     
