@@ -8,6 +8,13 @@
 import UIKit
 import SpriteKit
 
+enum ViewControllerType {
+    case shadow
+    case drawer
+    case safe
+    case vent
+}
+
 class ViewControllerPresenter {
     weak var presentingViewController: UIViewController?
 
@@ -15,30 +22,25 @@ class ViewControllerPresenter {
         self.presentingViewController = presentingViewController
     }
 
-    func presentShadowViewController() {
-        let shadowViewController = ShadowViewController()
-        shadowViewController.modalPresentationStyle = .fullScreen
-        presentingViewController?.present(shadowViewController, animated: true, completion: nil)
-    }
+    func present(viewControllerType: ViewControllerType) {
+        let viewController: UIViewController
 
-    func presentDrawerViewController() {
-        let drawerViewController = DrawerViewController()
-        drawerViewController.modalPresentationStyle = .fullScreen
-        presentingViewController?.present(drawerViewController, animated: true, completion: nil)
-    }
+        switch viewControllerType {
+        case .shadow:
+            viewController = ShadowViewController()
+        case .drawer:
+            viewController = DrawerViewController()
+        case .safe:
+            viewController = SafeViewController()
+        case .vent:
+            viewController = VentViewController()
+        }
 
-    func presentSafeViewController() {
-        let safeViewController = SafeViewController()
-        safeViewController.modalPresentationStyle = .fullScreen
-        presentingViewController?.present(safeViewController, animated: true, completion: nil)
-    }
-
-    func presentVentViewController() {
-        let ventViewController = VentViewController()
-        ventViewController.modalPresentationStyle = .fullScreen
-        presentingViewController?.present(ventViewController, animated: true, completion: nil)
+        viewController.modalPresentationStyle = .fullScreen
+        presentingViewController?.present(viewController, animated: true, completion: nil)
     }
 }
+
 
 extension SKScene {
     func viewController() -> UIViewController? {

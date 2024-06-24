@@ -128,16 +128,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             hero.position.y -= 2
         }
         if actionButton && contactManager.bedTapable {
-            viewControllerPresenter.presentShadowViewController()
+            viewControllerPresenter.present(viewControllerType: .shadow)
         }
         if actionButton && contactManager.drawerTapable {
-            viewControllerPresenter.presentDrawerViewController()
+            viewControllerPresenter.present(viewControllerType: .drawer)
         }
         if actionButton && contactManager.chestTapable {
-            viewControllerPresenter.presentSafeViewController()
+            viewControllerPresenter.present(viewControllerType: .safe)
         }
         if actionButton && contactManager.tvTapable {
-            viewControllerPresenter.presentVentViewController()
+            viewControllerPresenter.present(viewControllerType: .vent)
         }
         
         cameraNode.position = hero.position
@@ -174,30 +174,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     private func showActionSign(){
         
-    }
-    
-    private func presentShadowViewController() {
-        let shadowViewController = ShadowViewController()
-        shadowViewController.modalPresentationStyle = .fullScreen
-        viewController()?.present(shadowViewController, animated: true, completion: nil)
-    }
-
-    private func presentDrawerViewController() {
-        let drawerViewController = DrawerViewController()
-        drawerViewController.modalPresentationStyle = .fullScreen
-        viewController()?.present(drawerViewController, animated: true, completion: nil)
-    }
-
-    private func presentSafeViewController() {
-        let safeViewController = SafeViewController()
-        safeViewController.modalPresentationStyle = .fullScreen
-        viewController()?.present(safeViewController, animated: true, completion: nil)
-    }
-
-    private func presentVentViewController() {
-        let ventViewController = VentViewController()
-        ventViewController.modalPresentationStyle = .fullScreen
-        viewController()?.present(ventViewController, animated: true, completion: nil)
     }
     
     func savePuzzleState(puzzleID: String, isSolved: Bool) {
