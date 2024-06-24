@@ -13,24 +13,21 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var hero = SKSpriteNode()
     var stuff = SKSpriteNode()
+    var actionSign = SKSpriteNode()
     let hisTexture = SKTexture(imageNamed: "character")
     var moveToLeft = false
     var moveToRight = false
     var moveUp = false
     var moveDown = false
+    var actionButton = false
     var isInteract = false
     var cameraNode = SKCameraNode()
     var warningSign: SKSpriteNode!
     var heroNode: SKSpriteNode!
+
+    var contactManager: ContactManager!
     
     let collisionNames = ["bed", "drawer", "tv", "chest"]
-    
-    enum bitMask: UInt32 {
-        case hero = 0b1
-        case wall = 0b10
-        case bed = 0b100
-        case ground = 0b1000
-    }
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -41,6 +38,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         addCollisions(names: collisionNames)
         
+        contactManager = ContactManager(scene: self)
+        
         for node in self.children {
             if(node.name == "wallPhysics") {
                 if let someTileMap: SKTileMapNode = node as? SKTileMapNode {
@@ -50,19 +49,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 break
             }
         }
-        
-        // Create the warning sign node
-        warningSign = SKSpriteNode(imageNamed: "warning")
-        warningSign.position = CGPoint(x: 0, y: 0)
-        warningSign.zPosition = 5 // Ensure it's drawn above other nodes
-        warningSign.isHidden = true
-        self.addChild(warningSign)
-        
-        // Find or create your hero node
-        // Example:
-        heroNode = self.childNode(withName: "hero") as? SKSpriteNode
-        
-        
     }
     
     
@@ -138,31 +124,89 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if moveDown {
             hero.position.y -= 2
         }
+        if actionButton && contactManager.bedTapable {
+            presentShadowViewController()
+        }
+        if actionButton && contactManager.drawerTapable {
+            presentDrawerViewController()
+        }
+        if actionButton && contactManager.chestTapable {
+            presentSafeViewController()
+        }
+        if actionButton && contactManager.tvTapable {
+            presentVentViewController()
+        }
         
         cameraNode.position = hero.position
-        
-        guard let heroNode = heroNode else { return }
-
-                let warningDistanceThreshold: CGFloat = 10.0 // Adjust this value as needed
-                
-                var closestFurnitureNode: SKNode?
-                var minDistance: CGFloat = .greatestFiniteMagnitude
-                
-                self.enumerateChildNodes(withName: "furniture") { node, _ in
-                    let distance = hypot(heroNode.position.x - node.position.x, heroNode.position.y - node.position.y)
-                    if distance < minDistance {
-                        minDistance = distance
-                        closestFurnitureNode = node
-                    }
-                }
-                
-                if let closestFurnitureNode = closestFurnitureNode, minDistance < warningDistanceThreshold {
-                    warningSign.position = CGPoint(x: closestFurnitureNode.position.x, y: closestFurnitureNode.position.y + 50) // Adjust position as needed
-                    warningSign.isHidden = false
-                } else {
-                    warningSign.isHidden = true
-                }
+//        
+//        guard let heroNode = heroNode else { return }
+//        let warningDistanceThreshold: CGFloat = 10.0
+//        
+//        var closestFurnitureNode: SKNode?
+//        var minDistance: CGFloat = .greatestFiniteMagnitude
+//        
+//        self.enumerateChildNodes(withName: "furniture") { node, _ in
+//            let distance = hypot(heroNode.position.x - node.position.x, heroNode.position.y - node.position.y)
+//            if distance < minDistance {
+//                minDistance = distance
+//                closestFurnitureNode = node
+//            }
+//        }
+//        
+//        if let closestFurnitureNode = closestFurnitureNode, minDistance < warningDistanceThreshold {
+//            warningSign.position = CGPoint(x: closestFurnitureNode.position.x, y: closestFurnitureNode.position.y + 50) // Adjust position as needed
+//            warningSign.isHidden = false
+//        } else {
+//            warningSign.isHidden = true
+//        }
     }
     
+    public func didBegin(_ contact: SKPhysicsContact) {
+        contactManager.handleContactBegin(contactA: contact.bodyA.node?.name, contactB: contact.bodyB.node?.name)
+    }
     
+    public func didEnd(_ contact: SKPhysicsContact) {
+        contactManager.handleContactEnd(contactA: contact.bodyA.node?.name, contactB: contact.bodyB.node?.name)
+    }
+    
+    private func showActionSign(){
+        
+    }
+    
+    private func presentShadowViewController() {
+        let shadowViewController = ShadowViewController()
+        shadowViewController.modalPresentationStyle = .fullScreen
+        viewController()?.present(shadowViewController, animated: true, completion: nil)
+    }
+
+    private func presentDrawerViewController() {
+        let drawerViewController = DrawerViewController()
+        drawerViewController.modalPresentationStyle = .fullScreen
+        viewController()?.present(drawerViewController, animated: true, completion: nil)
+    }
+
+    private func presentSafeViewController() {
+        let safeViewController = SafeViewController()
+        safeViewController.modalPresentationStyle = .fullScreen
+        viewController()?.present(safeViewController, animated: true, completion: nil)
+    }
+
+    private func presentVentViewController() {
+        let ventViewController = VentViewController()
+        ventViewController.modalPresentationStyle = .fullScreen
+        viewController()?.present(ventViewController, animated: true, completion: nil)
+    }
+}
+
+extension SKScene {
+    func viewController() -> UIViewController? {
+        var responder: UIResponder? = self.view
+        while responder != nil {
+            responder = responder!.next
+            if let viewController = responder as? UIViewController {
+                return viewController
+            }
+        }
+        return nil
+    }
 }

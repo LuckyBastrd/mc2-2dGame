@@ -30,9 +30,9 @@ extension GameScene {
                     tileNode.physicsBody?.isDynamic = false
                     tileNode.physicsBody?.affectedByGravity = false
                     tileNode.physicsBody?.friction = 1
-                    tileNode.physicsBody?.categoryBitMask = bitMask.wall.rawValue
-                    tileNode.physicsBody?.contactTestBitMask = bitMask.hero.rawValue
-                    tileNode.physicsBody?.collisionBitMask = bitMask.hero.rawValue
+                    tileNode.physicsBody?.categoryBitMask = bitMasks.wall.rawValue
+                    tileNode.physicsBody?.contactTestBitMask = bitMasks.hero.rawValue
+                    tileNode.physicsBody?.collisionBitMask = bitMasks.hero.rawValue
                     tileNode.zPosition = 1
                     tileNode.anchorPoint = .init(x: 0.5, y: 0.5)
                     

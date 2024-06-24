@@ -94,8 +94,24 @@ public class SafeViewController: UIViewController, SKPhysicsContactDelegate {
         scene.addChild(insideSafeNode)
 
         sceneView.presentScene(scene)
+        addCloseButton()
     }
     
+    private func addCloseButton() {
+        let closeButton = UIButton(type: .system)
+        closeButton.setTitle("X", for: .normal)
+        closeButton.setTitleColor(.white, for: .normal)
+        closeButton.backgroundColor = .red
+        closeButton.layer.cornerRadius = 10
+        closeButton.frame = CGRect(x: 20, y: 40, width: 40, height: 40)
+        closeButton.addTarget(self, action: #selector(returnToGameViewController), for: .touchUpInside)
+        
+        view.addSubview(closeButton)
+    }
+    
+    @objc private func returnToGameViewController() {
+        dismiss(animated: true, completion: nil)
+    }
     public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
@@ -131,11 +147,7 @@ public class SafeViewController: UIViewController, SKPhysicsContactDelegate {
             }
         }
     }
-    
-    private func returnToGameViewController() {
-        dismiss(animated: true, completion: nil)
-    }
-    
+
     private func animateDocument(_ documentNode: SKSpriteNode) {
         let scaleAction = SKAction.scale(by: 2, duration: 1)
         let reverseAction = scaleAction.reversed()

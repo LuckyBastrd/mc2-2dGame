@@ -59,13 +59,11 @@ struct MainGameView: View {
                 Spacer()
                 
                 VStack() {
-                    
-                    HoldableButton(imageName: "arrowshape.up.circle.fill") {
-                        (scene as? GameScene)?.moveDown = true
+                    HoldableButton(imageName: "a.circle.fill") {
+                        (scene as? GameScene)?.actionButton = true
                     } onRelease: {
-                        (scene as? GameScene)?.moveDown = false
+                        (scene as? GameScene)?.actionButton = false
                     }
-                    
                 }
                 .offset(x: -100, y: 350)
             }

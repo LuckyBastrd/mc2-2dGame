@@ -85,6 +85,23 @@ public class VentViewController: UIViewController, SKPhysicsContactDelegate {
         scene.addChild(knifeNode)
 
         sceneView.presentScene(scene)
+        addCloseButton()
+    }
+    
+    private func addCloseButton() {
+        let closeButton = UIButton(type: .system)
+        closeButton.setTitle("X", for: .normal)
+        closeButton.setTitleColor(.white, for: .normal)
+        closeButton.backgroundColor = .red
+        closeButton.layer.cornerRadius = 10
+        closeButton.frame = CGRect(x: 20, y: 40, width: 40, height: 40)
+        closeButton.addTarget(self, action: #selector(returnToGameViewController), for: .touchUpInside)
+        
+        view.addSubview(closeButton)
+    }
+    
+    @objc private func returnToGameViewController() {
+        dismiss(animated: true, completion: nil)
     }
     
     public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -177,10 +194,6 @@ public class VentViewController: UIViewController, SKPhysicsContactDelegate {
                 print("knife tapped")
             }
         }
-    }
-    
-    private func returnToGameViewController() {
-        dismiss(animated: true, completion: nil)
     }
     
     private func animateKnife(_ knifeNode: SKSpriteNode) {

@@ -13,9 +13,10 @@ extension GameScene {
             if let node = childNode(withName: name) as? SKSpriteNode {
                 node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
                 node.physicsBody?.isDynamic = false
-                node.physicsBody?.categoryBitMask = bitMask.bed.rawValue
-                node.physicsBody?.contactTestBitMask = bitMask.hero.rawValue
-                node.physicsBody?.collisionBitMask = bitMask.hero.rawValue
+                node.physicsBody?.categoryBitMask = bitMasks.bed.rawValue
+                node.physicsBody?.contactTestBitMask = bitMasks.hero.rawValue
+                node.physicsBody?.collisionBitMask = bitMasks.hero.rawValue
+                node.name = name
                 node.zPosition = 4
             }
         }

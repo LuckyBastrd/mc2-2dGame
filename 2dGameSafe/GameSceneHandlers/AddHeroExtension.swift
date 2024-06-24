@@ -12,10 +12,18 @@ extension GameScene {
         hero = childNode(withName: "character") as! SKSpriteNode
         hero.zPosition = 50
         hero.physicsBody = SKPhysicsBody(texture: hisTexture, size: hero.size)
-        hero.physicsBody?.categoryBitMask = bitMask.hero.rawValue
-        hero.physicsBody?.contactTestBitMask = bitMask.wall.rawValue | bitMask.bed.rawValue
-        hero.physicsBody?.collisionBitMask = bitMask.wall.rawValue | bitMask.bed.rawValue
+        hero.physicsBody?.categoryBitMask = bitMasks.hero.rawValue
+        hero.physicsBody?.contactTestBitMask = bitMasks.wall.rawValue | bitMasks.bed.rawValue
+        hero.physicsBody?.collisionBitMask = bitMasks.wall.rawValue | bitMasks.bed.rawValue
         hero.physicsBody?.affectedByGravity = false
         hero.physicsBody?.allowsRotation = false
+        hero.name = "character"
+        actionSign = SKSpriteNode(imageNamed: "actionSign")
+        actionSign.size = CGSize(width: 5, height: 15)
+        actionSign.zPosition = 50
+        actionSign.position = CGPoint(x: -10, y: 15)
+        actionSign.isHidden = true
+        actionSign.name = "actionSign"
+        hero.addChild(actionSign)
     }
 }

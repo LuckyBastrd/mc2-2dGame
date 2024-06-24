@@ -16,6 +16,10 @@ enum bitMasks: UInt32 {
     case drawer = 0b111
     case screw = 0b1000
     case draggable = 0b1001
+    case hero = 0b1010
+    case wall = 0b1011
+    case bed = 0b1100
+    case ground = 0b1101
 }
 
 enum RotationDirection {

@@ -9,8 +9,6 @@ public class GameViewController: UIViewController, SKPhysicsContactDelegate {
     private var screenSize: CGSize!
     private var cameraNode: SKCameraNode!
     
-    private var mapCreator = MapCreator()
-    
     var selectedNode: SKSpriteNode!
     var humanNodeTappable = false
     var humanNodeTappable2 = false
@@ -39,62 +37,6 @@ public class GameViewController: UIViewController, SKPhysicsContactDelegate {
         scene.backgroundColor = .black
         
         scene.physicsWorld.contactDelegate = self
-        
-        let mainRoomNode = mapCreator.createMainRoom()
-        let humanNode4 = SKSpriteNode(imageNamed: "human")
-        humanNode4.size = CGSize(width: 48, height: 48)
-        humanNode4.position = CGPoint(x: 0, y: 0)
-        humanNode4.physicsBody = SKPhysicsBody(rectangleOf: humanNode4.size)
-        humanNode4.physicsBody?.affectedByGravity = false
-        humanNode4.physicsBody?.isDynamic = false
-        humanNode4.physicsBody?.categoryBitMask = bitMasks.human.rawValue
-        humanNode4.physicsBody?.collisionBitMask = bitMasks.ghost.rawValue
-        humanNode4.physicsBody?.contactTestBitMask = bitMasks.ghost.rawValue
-        humanNode4.name = "human4"
-        mainRoomNode.addChild(humanNode4)
-        scene.addChild(mainRoomNode)
-        
-        let bathRoomNode = mapCreator.createBathroom()
-        let humanNode3 = SKSpriteNode(imageNamed: "human")
-        humanNode3.size = CGSize(width: 48, height: 48)
-        humanNode3.position = CGPoint(x: 0, y: 0)
-        humanNode3.physicsBody = SKPhysicsBody(rectangleOf: humanNode3.size)
-        humanNode3.physicsBody?.affectedByGravity = false
-        humanNode3.physicsBody?.isDynamic = false
-        humanNode3.physicsBody?.categoryBitMask = bitMasks.human.rawValue
-        humanNode3.physicsBody?.collisionBitMask = bitMasks.ghost.rawValue
-        humanNode3.physicsBody?.contactTestBitMask = bitMasks.ghost.rawValue
-        humanNode3.name = "human3"
-        bathRoomNode.addChild(humanNode3)
-        scene.addChild(bathRoomNode)
-        
-        let workRoomNode = mapCreator.createWorkroom()
-        let humanNode2 = SKSpriteNode(imageNamed: "human")
-        humanNode2.size = CGSize(width: 48, height: 48)
-        humanNode2.position = CGPoint(x: 0, y: 0)
-        humanNode2.physicsBody = SKPhysicsBody(rectangleOf: humanNode2.size)
-        humanNode2.physicsBody?.affectedByGravity = false
-        humanNode2.physicsBody?.isDynamic = false
-        humanNode2.physicsBody?.categoryBitMask = bitMasks.human.rawValue
-        humanNode2.physicsBody?.collisionBitMask = bitMasks.ghost.rawValue
-        humanNode2.physicsBody?.contactTestBitMask = bitMasks.ghost.rawValue
-        humanNode2.name = "human2"
-        workRoomNode.addChild(humanNode2)
-        scene.addChild(workRoomNode)
-        
-        let bedRoomNode = mapCreator.createBedroom()
-        let humanNode = SKSpriteNode(imageNamed: "human")
-        humanNode.size = CGSize(width: 48, height: 48)
-        humanNode.position = CGPoint(x: 0, y: 0)
-        humanNode.physicsBody = SKPhysicsBody(rectangleOf: humanNode.size)
-        humanNode.physicsBody?.affectedByGravity = false
-        humanNode.physicsBody?.isDynamic = false
-        humanNode.physicsBody?.categoryBitMask = bitMasks.human.rawValue
-        humanNode.physicsBody?.collisionBitMask = bitMasks.ghost.rawValue
-        humanNode.physicsBody?.contactTestBitMask = bitMasks.ghost.rawValue
-        humanNode.name = "human"
-        bedRoomNode.addChild(humanNode)
-        scene.addChild(bedRoomNode)
         
         cameraNode = SKCameraNode()
         cameraNode.position = CGPoint(x: 0.0, y: 0.0)
@@ -191,53 +133,5 @@ public class GameViewController: UIViewController, SKPhysicsContactDelegate {
         present(ventViewController, animated: true, completion: nil)
     }
 
-    public func didBegin(_ contact: SKPhysicsContact) {
-       let contactA = contact.bodyA.node?.name
-       let contactB = contact.bodyB.node?.name
-       
-       if (contactA == "ghost" && contactB == "human") || (contactA == "human" && contactB == "ghost") {
-           humanNodeTappable = true
-           print("tap humannya bro")
-       }
-        
-        if (contactA == "ghost" && contactB == "human2") || (contactA == "human2" && contactB == "ghost") {
-            humanNodeTappable2 = true
-            print("tap humannya bro 2")
-        }
-        
-        if (contactA == "ghost" && contactB == "human3") || (contactA == "human3" && contactB == "ghost") {
-            humanNodeTappable3 = true
-            print("tap humannya bro 3")
-        }
-        
-        if (contactA == "ghost" && contactB == "human4") || (contactA == "human4" && contactB == "ghost") {
-            humanNodeTappable4 = true
-            print("tap humannya bro 4")
-        }
-    }
     
-    public func didEnd(_ contact: SKPhysicsContact) {
-       let contactA = contact.bodyA.node?.name
-       let contactB = contact.bodyB.node?.name
-       
-       if (contactA == "ghost" && contactB == "human") || (contactA == "human" && contactB == "ghost") {
-           humanNodeTappable = false
-           print("tap humannya bro")
-       }
-        
-        if (contactA == "ghost" && contactB == "human2") || (contactA == "human2" && contactB == "ghost") {
-            humanNodeTappable2 = false
-            print("tap humannya bro 2")
-        }
-        
-        if (contactA == "ghost" && contactB == "human3") || (contactA == "human3" && contactB == "ghost") {
-            humanNodeTappable3 = false
-            print("tap humannya bro 3")
-        }
-        
-        if (contactA == "ghost" && contactB == "human4") || (contactA == "human4" && contactB == "ghost") {
-            humanNodeTappable4 = false
-            print("tap humannya bro 4")
-        }
-    }
 }
