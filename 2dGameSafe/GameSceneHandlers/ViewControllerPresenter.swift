@@ -7,12 +7,20 @@
 
 import UIKit
 import SpriteKit
+import SwiftUI
 
 enum ViewControllerType {
     case shadow
     case drawer
     case safe
     case vent
+}
+
+enum ViewSwiftUIType {
+    case wardrobe
+    case cabinet
+    case lockpick
+    case picture
 }
 
 class ViewControllerPresenter {
@@ -38,6 +46,26 @@ class ViewControllerPresenter {
 
         viewController.modalPresentationStyle = .fullScreen
         presentingViewController?.present(viewController, animated: true, completion: nil)
+    }
+    
+    func presentSwiftUI(viewSwiftUIType: ViewSwiftUIType) {
+        let swiftUIView: AnyView
+        
+        switch viewSwiftUIType {
+        case .wardrobe:
+            swiftUIView = AnyView(ShakeView())
+        case .cabinet:
+            swiftUIView = AnyView(FileCabinetView())
+        case .lockpick:
+            swiftUIView = AnyView(CombinationLockView())
+        case .picture:
+            swiftUIView = AnyView(AllAxisView())
+        }
+        
+        let hostingController = UIHostingController(rootView: swiftUIView)
+        hostingController.modalPresentationStyle = .fullScreen
+        presentingViewController?.present(hostingController, animated: true, completion: nil)
+
     }
 }
 

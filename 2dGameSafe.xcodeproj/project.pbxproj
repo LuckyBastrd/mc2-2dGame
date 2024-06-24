@@ -13,8 +13,6 @@
 		9A1E9C932C287C4A0079ED3A /* AddHeroExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C842C287C4A0079ED3A /* AddHeroExtension.swift */; };
 		9A1E9C942C287C4A0079ED3A /* MainGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C812C287C4A0079ED3A /* MainGameView.swift */; };
 		9A1E9C952C287C4A0079ED3A /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C832C287C4A0079ED3A /* GameScene.swift */; };
-		9A1E9C962C287C4A0079ED3A /* HoldableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A1E9C7D2C287C4A0079ED3A /* HoldableButton.swift */; };
-		9A1E9C972C287C4A0079ED3A /* MainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9C892C287C4A0079ED3A /* MainScene.sks */; };
 		9A1E9C992C287C4A0079ED3A /* MyTileSet.sks in Resources */ = {isa = PBXBuildFile; fileRef = 9A1E9C882C287C4A0079ED3A /* MyTileSet.sks */; };
 		A7C9A43C2C1B382D00F98BB9 /* _dGameSafeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A43B2C1B382D00F98BB9 /* _dGameSafeApp.swift */; };
 		A7C9A43E2C1B382D00F98BB9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A43D2C1B382D00F98BB9 /* ContentView.swift */; };
@@ -33,10 +31,25 @@
 		A7C9A47E2C29301F00F98BB9 /* ViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A47D2C29301F00F98BB9 /* ViewControllerPresenter.swift */; };
 		A7C9A4812C2933E400F98BB9 /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7C9A47F2C2933E400F98BB9 /* Rain.sks */; };
 		A7C9A4822C2933E400F98BB9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7C9A4802C2933E400F98BB9 /* Assets.xcassets */; };
+		A7C9A4842C294E9900F98BB9 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4832C294E9900F98BB9 /* StartView.swift */; };
+		A7C9A4962C294EDF00F98BB9 /* AllAxisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4892C294EDE00F98BB9 /* AllAxisView.swift */; };
+		A7C9A4972C294EDF00F98BB9 /* GyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A48A2C294EDE00F98BB9 /* GyroManager.swift */; };
+		A7C9A4982C294EDF00F98BB9 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A48D2C294EDE00F98BB9 /* AudioPlayer.swift */; };
+		A7C9A4992C294EDF00F98BB9 /* main_music.wav in Resources */ = {isa = PBXBuildFile; fileRef = A7C9A48E2C294EDE00F98BB9 /* main_music.wav */; };
+		A7C9A49A2C294EDF00F98BB9 /* GlitchText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4902C294EDE00F98BB9 /* GlitchText.swift */; };
+		A7C9A49B2C294EDF00F98BB9 /* HoldableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4912C294EDE00F98BB9 /* HoldableButton.swift */; };
+		A7C9A49C2C294EDF00F98BB9 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4922C294EDE00F98BB9 /* LoadingView.swift */; };
+		A7C9A49F2C294F3B00F98BB9 /* MainScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = A7C9A49E2C294F3B00F98BB9 /* MainScene.sks */; };
+		A7C9A4A92C294F5000F98BB9 /* FileCabinetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4A02C294F4F00F98BB9 /* FileCabinetView.swift */; };
+		A7C9A4AA2C294F5000F98BB9 /* PeekGyroManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4A12C294F4F00F98BB9 /* PeekGyroManager.swift */; };
+		A7C9A4AB2C294F5000F98BB9 /* ShakeMotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4A32C294F5000F98BB9 /* ShakeMotionManager.swift */; };
+		A7C9A4AC2C294F5000F98BB9 /* ShakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4A42C294F5000F98BB9 /* ShakeView.swift */; };
+		A7C9A4AD2C294F5000F98BB9 /* WardrobeShakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4A52C294F5000F98BB9 /* WardrobeShakeView.swift */; };
+		A7C9A4AE2C294F5000F98BB9 /* CombinationLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4A72C294F5000F98BB9 /* CombinationLockView.swift */; };
+		A7C9A4B02C294F8D00F98BB9 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C9A4AF2C294F8D00F98BB9 /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9A1E9C7D2C287C4A0079ED3A /* HoldableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HoldableButton.swift; sourceTree = "<group>"; };
 		9A1E9C7F2C287C4A0079ED3A /* RainfallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainfallView.swift; sourceTree = "<group>"; };
 		9A1E9C812C287C4A0079ED3A /* MainGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameView.swift; sourceTree = "<group>"; };
 		9A1E9C832C287C4A0079ED3A /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -44,7 +57,6 @@
 		9A1E9C852C287C4A0079ED3A /* AddCollisionExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollisionExtension.swift; sourceTree = "<group>"; };
 		9A1E9C862C287C4A0079ED3A /* TilePhysicsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePhysicsExtension.swift; sourceTree = "<group>"; };
 		9A1E9C882C287C4A0079ED3A /* MyTileSet.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MyTileSet.sks; sourceTree = "<group>"; };
-		9A1E9C892C287C4A0079ED3A /* MainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainScene.sks; sourceTree = "<group>"; };
 		A7C9A4382C1B382D00F98BB9 /* 2dGameSafe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2dGameSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7C9A43B2C1B382D00F98BB9 /* _dGameSafeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _dGameSafeApp.swift; sourceTree = "<group>"; };
 		A7C9A43D2C1B382D00F98BB9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +75,22 @@
 		A7C9A47D2C29301F00F98BB9 /* ViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerPresenter.swift; sourceTree = "<group>"; };
 		A7C9A47F2C2933E400F98BB9 /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
 		A7C9A4802C2933E400F98BB9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A7C9A4832C294E9900F98BB9 /* StartView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		A7C9A4892C294EDE00F98BB9 /* AllAxisView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllAxisView.swift; sourceTree = "<group>"; };
+		A7C9A48A2C294EDE00F98BB9 /* GyroManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GyroManager.swift; sourceTree = "<group>"; };
+		A7C9A48D2C294EDE00F98BB9 /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		A7C9A48E2C294EDE00F98BB9 /* main_music.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = main_music.wav; sourceTree = "<group>"; };
+		A7C9A4902C294EDE00F98BB9 /* GlitchText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlitchText.swift; sourceTree = "<group>"; };
+		A7C9A4912C294EDE00F98BB9 /* HoldableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HoldableButton.swift; sourceTree = "<group>"; };
+		A7C9A4922C294EDE00F98BB9 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A7C9A49E2C294F3B00F98BB9 /* MainScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; name = MainScene.sks; path = "../../../../../Downloads/mc2-2dGame/2dGameSafe/SpriteKit/MainScene.sks"; sourceTree = "<group>"; };
+		A7C9A4A02C294F4F00F98BB9 /* FileCabinetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileCabinetView.swift; sourceTree = "<group>"; };
+		A7C9A4A12C294F4F00F98BB9 /* PeekGyroManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeekGyroManager.swift; sourceTree = "<group>"; };
+		A7C9A4A32C294F5000F98BB9 /* ShakeMotionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeMotionManager.swift; sourceTree = "<group>"; };
+		A7C9A4A42C294F5000F98BB9 /* ShakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShakeView.swift; sourceTree = "<group>"; };
+		A7C9A4A52C294F5000F98BB9 /* WardrobeShakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WardrobeShakeView.swift; sourceTree = "<group>"; };
+		A7C9A4A72C294F5000F98BB9 /* CombinationLockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationLockView.swift; sourceTree = "<group>"; };
+		A7C9A4AF2C294F8D00F98BB9 /* GameState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,17 +104,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9A1E9C7E2C287C4A0079ED3A /* Tool */ = {
-			isa = PBXGroup;
-			children = (
-				9A1E9C7D2C287C4A0079ED3A /* HoldableButton.swift */,
-			);
-			path = Tool;
-			sourceTree = "<group>";
-		};
 		9A1E9C802C287C4A0079ED3A /* OtherViews */ = {
 			isa = PBXGroup;
 			children = (
+				A7C9A4832C294E9900F98BB9 /* StartView.swift */,
 				9A1E9C7F2C287C4A0079ED3A /* RainfallView.swift */,
 				A7C9A47F2C2933E400F98BB9 /* Rain.sks */,
 				A7C9A4802C2933E400F98BB9 /* Assets.xcassets */,
@@ -105,6 +126,7 @@
 		9A1E9C872C287C4A0079ED3A /* GameSceneHandlers */ = {
 			isa = PBXGroup;
 			children = (
+				A7C9A4AF2C294F8D00F98BB9 /* GameState.swift */,
 				9A1E9C832C287C4A0079ED3A /* GameScene.swift */,
 				A7C9A47B2C291FD900F98BB9 /* ContactManager.swift */,
 				A7C9A47D2C29301F00F98BB9 /* ViewControllerPresenter.swift */,
@@ -118,8 +140,8 @@
 		9A1E9C8A2C287C4A0079ED3A /* SpriteKit */ = {
 			isa = PBXGroup;
 			children = (
+				A7C9A49E2C294F3B00F98BB9 /* MainScene.sks */,
 				9A1E9C882C287C4A0079ED3A /* MyTileSet.sks */,
-				9A1E9C892C287C4A0079ED3A /* MainScene.sks */,
 			);
 			path = SpriteKit;
 			sourceTree = "<group>";
@@ -143,7 +165,9 @@
 		A7C9A43A2C1B382D00F98BB9 /* 2dGameSafe */ = {
 			isa = PBXGroup;
 			children = (
-				9A1E9C7E2C287C4A0079ED3A /* Tool */,
+				A7C9A48C2C294EDE00F98BB9 /* HintViews */,
+				A7C9A48F2C294EDE00F98BB9 /* Music */,
+				A7C9A4932C294EDE00F98BB9 /* Tool */,
 				9A1E9C802C287C4A0079ED3A /* OtherViews */,
 				9A1E9C822C287C4A0079ED3A /* GameViews */,
 				9A1E9C872C287C4A0079ED3A /* GameSceneHandlers */,
@@ -181,12 +205,79 @@
 		A7C9A4682C23C12500F98BB9 /* PuzzleController */ = {
 			isa = PBXGroup;
 			children = (
+				A7C9A4A62C294F5000F98BB9 /* Puzzle1 */,
+				A7C9A4A22C294F4F00F98BB9 /* Puzzle2 */,
+				A7C9A4A82C294F5000F98BB9 /* Puzzle3 */,
 				A7C9A4572C2183F400F98BB9 /* ShadowViewController.swift */,
 				A7C9A4542C1C256B00F98BB9 /* VentViewController.swift */,
 				A7C9A4642C227F2A00F98BB9 /* DrawerViewController.swift */,
 				A7C9A44B2C1B3D4100F98BB9 /* SafeViewController.swift */,
 			);
 			path = PuzzleController;
+			sourceTree = "<group>";
+		};
+		A7C9A48B2C294EDE00F98BB9 /* PaintingHint */ = {
+			isa = PBXGroup;
+			children = (
+				A7C9A4892C294EDE00F98BB9 /* AllAxisView.swift */,
+				A7C9A48A2C294EDE00F98BB9 /* GyroManager.swift */,
+			);
+			path = PaintingHint;
+			sourceTree = "<group>";
+		};
+		A7C9A48C2C294EDE00F98BB9 /* HintViews */ = {
+			isa = PBXGroup;
+			children = (
+				A7C9A48B2C294EDE00F98BB9 /* PaintingHint */,
+			);
+			path = HintViews;
+			sourceTree = "<group>";
+		};
+		A7C9A48F2C294EDE00F98BB9 /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				A7C9A48D2C294EDE00F98BB9 /* AudioPlayer.swift */,
+				A7C9A48E2C294EDE00F98BB9 /* main_music.wav */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		A7C9A4932C294EDE00F98BB9 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				A7C9A4902C294EDE00F98BB9 /* GlitchText.swift */,
+				A7C9A4912C294EDE00F98BB9 /* HoldableButton.swift */,
+				A7C9A4922C294EDE00F98BB9 /* LoadingView.swift */,
+			);
+			name = Tool;
+			path = "../../../../Downloads/mc2-2dGame/2dGameSafe/Tool";
+			sourceTree = "<group>";
+		};
+		A7C9A4A22C294F4F00F98BB9 /* Puzzle2 */ = {
+			isa = PBXGroup;
+			children = (
+				A7C9A4A02C294F4F00F98BB9 /* FileCabinetView.swift */,
+				A7C9A4A12C294F4F00F98BB9 /* PeekGyroManager.swift */,
+			);
+			path = Puzzle2;
+			sourceTree = "<group>";
+		};
+		A7C9A4A62C294F5000F98BB9 /* Puzzle1 */ = {
+			isa = PBXGroup;
+			children = (
+				A7C9A4A32C294F5000F98BB9 /* ShakeMotionManager.swift */,
+				A7C9A4A42C294F5000F98BB9 /* ShakeView.swift */,
+				A7C9A4A52C294F5000F98BB9 /* WardrobeShakeView.swift */,
+			);
+			path = Puzzle1;
+			sourceTree = "<group>";
+		};
+		A7C9A4A82C294F5000F98BB9 /* Puzzle3 */ = {
+			isa = PBXGroup;
+			children = (
+				A7C9A4A72C294F5000F98BB9 /* CombinationLockView.swift */,
+			);
+			path = Puzzle3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,11 +339,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7C9A4812C2933E400F98BB9 /* Rain.sks in Resources */,
+				A7C9A4992C294EDF00F98BB9 /* main_music.wav in Resources */,
 				A7C9A4822C2933E400F98BB9 /* Assets.xcassets in Resources */,
 				A7C9A4622C2183FB00F98BB9 /* PolyPlane.scn in Resources */,
 				A7C9A4432C1B382E00F98BB9 /* Preview Assets.xcassets in Resources */,
 				A7C9A4612C2183FB00F98BB9 /* Box.scn in Resources */,
-				9A1E9C972C287C4A0079ED3A /* MainScene.sks in Resources */,
+				A7C9A49F2C294F3B00F98BB9 /* MainScene.sks in Resources */,
 				9A1E9C992C287C4A0079ED3A /* MyTileSet.sks in Resources */,
 				A7C9A4402C1B382E00F98BB9 /* Assets.xcassets in Resources */,
 			);
@@ -266,9 +358,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				A7C9A4592C2183F400F98BB9 /* ShadowViewController.swift in Sources */,
+				A7C9A4842C294E9900F98BB9 /* StartView.swift in Sources */,
 				A7C9A4522C1C0DB300F98BB9 /* GameViewController.swift in Sources */,
+				A7C9A4AA2C294F5000F98BB9 /* PeekGyroManager.swift in Sources */,
+				A7C9A4AB2C294F5000F98BB9 /* ShakeMotionManager.swift in Sources */,
+				A7C9A4B02C294F8D00F98BB9 /* GameState.swift in Sources */,
 				A7C9A43E2C1B382D00F98BB9 /* ContentView.swift in Sources */,
 				A7C9A44C2C1B3D4100F98BB9 /* SafeViewController.swift in Sources */,
+				A7C9A4AE2C294F5000F98BB9 /* CombinationLockView.swift in Sources */,
+				A7C9A4AD2C294F5000F98BB9 /* WardrobeShakeView.swift in Sources */,
 				A7C9A4562C1C256B00F98BB9 /* VentViewController.swift in Sources */,
 				A7C9A43C2C1B382D00F98BB9 /* _dGameSafeApp.swift in Sources */,
 				A7C9A44E2C1B3D5500F98BB9 /* bitMasks.swift in Sources */,
@@ -277,9 +375,16 @@
 				A7C9A47E2C29301F00F98BB9 /* ViewControllerPresenter.swift in Sources */,
 				9A1E9C922C287C4A0079ED3A /* TilePhysicsExtension.swift in Sources */,
 				9A1E9C932C287C4A0079ED3A /* AddHeroExtension.swift in Sources */,
+				A7C9A4982C294EDF00F98BB9 /* AudioPlayer.swift in Sources */,
+				A7C9A49B2C294EDF00F98BB9 /* HoldableButton.swift in Sources */,
+				A7C9A4972C294EDF00F98BB9 /* GyroManager.swift in Sources */,
+				A7C9A49A2C294EDF00F98BB9 /* GlitchText.swift in Sources */,
+				A7C9A4962C294EDF00F98BB9 /* AllAxisView.swift in Sources */,
+				A7C9A4AC2C294F5000F98BB9 /* ShakeView.swift in Sources */,
+				A7C9A49C2C294EDF00F98BB9 /* LoadingView.swift in Sources */,
 				9A1E9C942C287C4A0079ED3A /* MainGameView.swift in Sources */,
+				A7C9A4A92C294F5000F98BB9 /* FileCabinetView.swift in Sources */,
 				9A1E9C952C287C4A0079ED3A /* GameScene.swift in Sources */,
-				9A1E9C962C287C4A0079ED3A /* HoldableButton.swift in Sources */,
 				A7C9A47C2C291FD900F98BB9 /* ContactManager.swift in Sources */,
 				A7C9A4502C1C0DA100F98BB9 /* GameViewControllerRepresentable.swift in Sources */,
 				A7C9A4652C227F2A00F98BB9 /* DrawerViewController.swift in Sources */,
@@ -422,8 +527,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,8 +555,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

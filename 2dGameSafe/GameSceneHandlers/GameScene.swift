@@ -24,11 +24,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var cameraNode = SKCameraNode()
     var warningSign: SKSpriteNode!
     var heroNode: SKSpriteNode!
+    
+    var gameState: GameState?
 
     var contactManager: ContactManager!
     var viewControllerPresenter: ViewControllerPresenter!
     
-    let collisionNames = ["bed", "drawer", "tv", "chest"]
+    let collisionNames = ["bed", "drawer", "tv", "chest", "wardrobe", "file_cabinet", "safe", "pic_frame"]
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -141,17 +143,39 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         if moveDown {
             hero.position.y -= 2
         }
-        if actionButton && contactManager.bedTapable {
-            viewControllerPresenter.present(viewControllerType: .shadow)
-        }
-        if actionButton && contactManager.drawerTapable {
-            viewControllerPresenter.present(viewControllerType: .drawer)
-        }
-        if actionButton && contactManager.chestTapable {
-            viewControllerPresenter.present(viewControllerType: .safe)
-        }
-        if actionButton && contactManager.tvTapable {
-            viewControllerPresenter.present(viewControllerType: .vent)
+        
+        if actionButton {
+            if let gameState = gameState {
+                if gameState.bedTapable {
+                    print("Chest is tappable")
+                    viewControllerPresenter.present(viewControllerType: .shadow)
+                } else if gameState.drawerTapable {
+                    print("Chest is tappable")
+                    viewControllerPresenter.present(viewControllerType: .drawer)
+                } else if gameState.chestTapable {
+                    print("Chest is tappable")
+                    viewControllerPresenter.present(viewControllerType: .safe)
+                } else if gameState.tvTapable {
+                    print("Chest is tappable")
+                    viewControllerPresenter.present(viewControllerType: .vent)
+                } else if gameState.wardrobeTapable {
+                    print("Chest is tappable")
+                    viewControllerPresenter.presentSwiftUI(viewSwiftUIType: .wardrobe)
+                } else if gameState.cabinetTapable {
+                    print("Chest is tappable")
+                    viewControllerPresenter.presentSwiftUI(viewSwiftUIType: .cabinet)
+                } else if gameState.safeTapable {
+                    print("Chest is tappable")
+                    viewControllerPresenter.presentSwiftUI(viewSwiftUIType: .lockpick)
+                } else if gameState.picFrameTapable {
+                    print("Chest is tappable")
+                    viewControllerPresenter.presentSwiftUI(viewSwiftUIType: .picture)
+                } else {
+                    print("No actionable state detected")
+                }
+            } else {
+                print("gameState is nil")
+            }
         }
         
         cameraNode.position = hero.position
